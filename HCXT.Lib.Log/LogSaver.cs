@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Xml;
 using log4net;
 
 namespace HCXT.Lib.Log
@@ -62,6 +63,24 @@ namespace HCXT.Lib.Log
         public LogSaver(string log4netConfigFile,string logSaverName)
         {
             log4net.Config.XmlConfigurator.Configure(new FileInfo(log4netConfigFile));
+            _saver = LogManager.GetLogger(logSaverName);
+        }
+        /// <summary>
+        /// 构造方法
+        /// </summary>
+        /// <param name="log4netConfigXml">log4net配置XML节点</param>
+        public LogSaver(XmlElement log4netConfigXml)
+        {
+            log4net.Config.XmlConfigurator.Configure(log4netConfigXml);
+        }
+        /// <summary>
+        /// 构造方法，初始化日志保存器
+        /// </summary>
+        /// <param name="log4netConfigXml">log4net配置XML节点</param>
+        /// <param name="logSaverName">log4net适配器节点名称</param>
+        public LogSaver(XmlElement log4netConfigXml, string logSaverName)
+        {
+            log4net.Config.XmlConfigurator.Configure(log4netConfigXml);
             _saver = LogManager.GetLogger(logSaverName);
         }
 

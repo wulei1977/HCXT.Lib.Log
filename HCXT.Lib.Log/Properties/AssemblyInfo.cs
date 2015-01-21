@@ -26,7 +26,7 @@ using System.Security;
 // 允许部分受信任的代码调用具有强名称的程序集
 [assembly: AllowPartiallyTrustedCallers()]
 // 使用文件的名称初始化 AssemblyKeyFileAttribute 类的新实例，该文件包含为正在属性化的程序集生成强名称的密钥对。
-[assembly: AssemblyKeyFile(@"E:\Work\华创讯通\HCXT类库\HCXT.Lib.Log\HCXT.Lib.Log\bin\Debug\HCXT.Lib.Log.snk")]
+[assembly: AssemblyKeyFile(@"HCXT.Lib.Log.snk")]
 
 // 程序集的版本信息由下面四个值组成:
 //
@@ -37,10 +37,15 @@ using System.Security;
 //
 // 可以指定所有这些值，也可以使用“修订号”和“内部版本号”的默认值，
 // 方法是按如下所示使用“*”:
-[assembly: AssemblyVersion("1.0.2.2")]
-[assembly: AssemblyFileVersion("1.2012.0912.1304")]
+[assembly: AssemblyVersion("1.0.2.3")]
+[assembly: AssemblyFileVersion("1.2014.1125.1535")]
 
 // 更新日志
+//
+// 2014年11月25日
+//     版 本 号：1.0.2.3
+//     文件版本：1.2014.1125.1535
+//     更新内容：为构造方法增加2个重载，引入XmlElement对象当作配置参数
 //
 // 2012年09月12日
 //     版 本 号：1.0.2.2
